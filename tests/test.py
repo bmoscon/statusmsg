@@ -26,3 +26,12 @@ if __name__ == '__main__':
         f2()
     except:
         pass
+
+    with status("testing", 'OK', 'FAIL', progress=500) as progress_bar:
+        counter = 0
+        for i in range(500):
+            counter = i - 10
+            progress_bar.update()
+            sleep(0.01)
+            #if i == 350:
+            #    raise ValueError
